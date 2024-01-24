@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cool Plugin</title>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous"
+        ></script>
+
+        <link
+            rel="stylesheet"
+            href="./responsive-event-calendar-jquery/evo-calendar/css/evo-calendar.midnight-blue.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="./responsive-event-calendar-jquery/evo-calendar/css/evo-calendar.css"
+        />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+        <script src="bParticles.js-master/bParticles/bParticles.js"></script>
+
+        <script src="./jquery-number-counter-on-scroll/jquery.countup.min.js"></script>
+
+        <script src="./responsive-event-calendar-jquery/evo-calendar/js/evo-calendar.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                bParticles(
+                    "bParticles.js-master/bParticles/bParticles.json",
+                    "particles",
+                    function (particlesID) {
+                        console.log(
+                            "bParticles initiliazed with ID #" + particlesID
+                        );
+                    }
+                );
+                //counter
+                $(".counter").countUp({
+                    time: 200000,
+                    delay: 100,
+                });
+                //calendar
+                $("#evoCalendar").evoCalendar();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="particles">
+            <div class="counters">
+                <span class="counter">20000</span>
+                <span class="counter">50000</span>
+                <span class="counter">100000</span>
+            </div>
+            <div id="evoCalendar"></div>
+        </div>
+    </body>
+</html>
